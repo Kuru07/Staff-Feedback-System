@@ -15,7 +15,7 @@ def register_routes(api):
     """
 
     # Define the resource for handling the collection of staff members.
-    @api.route('/staff')
+    @api.route('/staffs')
     class StaffList(Resource):
         
         # Decorator to serialize the response (a list of staff) using the staff_model.
@@ -56,7 +56,7 @@ def register_routes(api):
             return {'message': 'Staff added', 'staff_id': str(result.inserted_id)}, 201
 
     # Define the resource for handling a single staff member by their MongoDB _id.
-    @api.route('/staff/<string:staff_id>')
+    @api.route('/staffs/<string:staff_id>')
     class Staff(Resource):
         
         # Decorator to serialize the single object response using the staff_model.
@@ -75,7 +75,7 @@ def register_routes(api):
 
     # Define the resource for handling reviews related to a specific staff member.
     # Note: This route uses the 'employeeId' for lookup, not the MongoDB '_id'.
-    @api.route('/staff/<string:staff_id>/reviews')
+    @api.route('/staffs/<string:staff_id>/reviews')
     class StaffReviews(Resource):
 
         # Decorator to serialize the list of reviews using the review_model.
