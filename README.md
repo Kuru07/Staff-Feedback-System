@@ -200,7 +200,7 @@ Swagger documentation available at: `http://localhost:5000/swagger/`
 
 #### Workflow 1: Setting Up a New School
 1. Create school via POST `/schools`
-2. Add staff members via POST `/staff`
+2. Add staff members via POST `/staffs`
 3. Assign staff to school using schoolId
 4. Begin collecting reviews
 
